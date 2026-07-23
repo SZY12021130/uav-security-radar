@@ -6,7 +6,7 @@ export function useDataset() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch('/uav_sec_data.json')
+    fetch(`${import.meta.env.BASE_URL}uav_sec_data.json`)
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`)
         return r.json()
